@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>FastFinance</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Muntadhar Haydar</Authors>
+        <Company>RnkOps</Company>
+        <PackageProjectUrl>https://github.com/rnkops/FastFinance</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/rnkops/FastFinance</RepositoryUrl>
+        <PackageTags>crud api</PackageTags>
+        <Copywrite>Copyright (c) 2022 rnkops</Copywrite>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+
+</Project>

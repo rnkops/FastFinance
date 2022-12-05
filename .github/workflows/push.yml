@@ -1,0 +1,23 @@
+name: publish to nuget
+on:
+    push:
+        branches:
+            - main
+jobs:
+    publish-nugets:
+        name: Build and publish nugets
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@master
+
+            - name: Setup dotnet
+              uses: actions/setup-dotnet@master
+              with:
+                  dotnet-version: 7.0.100
+            - name: Pack FastFinance
+              run: dotnet pack src/lib/FastFinance.csproj -c Release -o ./artifacts
+            - name: Pack FastFinance.FastCrud
+              run: dotnet pack src/fastcrud-ef/FastFinance.FastCrud.EFCore.csproj -c Release -o ./artifacts
+
+            - name: Publish
+              run: dotnet nuget push ./artifacts/*.nupkg  -s https://api.nuget.org/v3/index.json -k '${{ secrets.NUGET_API_KEY }}' --skip-duplicate --no-symbols

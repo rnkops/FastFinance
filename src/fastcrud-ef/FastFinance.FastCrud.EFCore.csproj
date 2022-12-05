@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>FastFinance.FastCrud.EFCore</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Muntadhar Haydar</Authors>
+        <Company>RnkOps</Company>
+        <PackageProjectUrl>https://github.com/rnkops/FastFinance</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/rnkops/FastFinance</RepositoryUrl>
+        <PackageTags>crud api</PackageTags>
+        <Copywrite>Copyright (c) 2022 rnkops</Copywrite>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FastCrud.Kernel" Version="1.0.1" />
+        <PackageReference Include="FastCrud.Persistence.EFCore" Version="1.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\lib\FastFinance.csproj" />
+    </ItemGroup>
+
+</Project>

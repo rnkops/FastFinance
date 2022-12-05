@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFinance", "lib\FastFinance.csproj", "{4E6831AF-618E-4773-AA7E-C8B7A9A7FB76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFinance.FastCrud.EFCore", "fastcrud-ef\FastFinance.FastCrud.EFCore.csproj", "{A9463F03-6356-4EA4-97EB-7DDB2BEAFEFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E6831AF-618E-4773-AA7E-C8B7A9A7FB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6831AF-618E-4773-AA7E-C8B7A9A7FB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6831AF-618E-4773-AA7E-C8B7A9A7FB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6831AF-618E-4773-AA7E-C8B7A9A7FB76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C308F7-EB72-49FE-AE9C-84CCB272857B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C308F7-EB72-49FE-AE9C-84CCB272857B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C308F7-EB72-49FE-AE9C-84CCB272857B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C308F7-EB72-49FE-AE9C-84CCB272857B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9463F03-6356-4EA4-97EB-7DDB2BEAFEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9463F03-6356-4EA4-97EB-7DDB2BEAFEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9463F03-6356-4EA4-97EB-7DDB2BEAFEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9463F03-6356-4EA4-97EB-7DDB2BEAFEFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
