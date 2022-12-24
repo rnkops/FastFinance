@@ -16,10 +16,11 @@ builder.Services.AddDbContext<ETDbContext>(options =>
 builder.Services
     .AddScoped<BaseDbContext, ETDbContext>()
     .AddScoped<IAccountRepository, AccountRepository>()
-    .AddScoped<ITransactionRepositoryFactory, TransactionRepositoryFactory>()
     .AddScoped<TransactionRepository>()
-    .AddScoped<ChartOfAccount>()
-    .AddScoped<Journal>();
+    .AddScoped<IAccountRepositoryFactory, AccountRepositoryFactory>()
+    .AddScoped<ITransactionRepositoryFactory, TransactionRepositoryFactory>()
+    .AddScoped<IChartOfAccounts, ChartOfAccounts>()
+    .AddScoped<FastFinance.Data.Journal, ExpenseTracker.Data.Journal>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

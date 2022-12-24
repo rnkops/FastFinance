@@ -4,5 +4,5 @@ namespace FastFinance.Repositories;
 
 public interface ITransactionRepositoryFactory
 {
-    ITransactionRepository<TTransaction> Create<TTransaction>() where TTransaction : Transaction;
+    ITransactionRepository<TTransaction> Create<TTransaction>() where TTransaction : ITransaction;
 }

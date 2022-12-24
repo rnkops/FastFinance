@@ -13,7 +13,7 @@ public class TransactionRepositoryFactory : ITransactionRepositoryFactory
         _serviceProvider = serviceProvider;
     }
 
-    public ITransactionRepository<TTransaction> Create<TTransaction>() where TTransaction : Transaction
+    public ITransactionRepository<TTransaction> Create<TTransaction>() where TTransaction : ITransaction
     {
         var type = typeof(TTransaction);
         if (type == typeof(Transaction))

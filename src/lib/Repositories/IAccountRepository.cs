@@ -3,16 +3,20 @@ using FastFinance.Models;
 
 namespace FastFinance.Repositories;
 
-public interface IAccountRepository
+public interface IAccountRepository<TModel> where TModel : IAccount
 {
-    Task<Account?> FindAsync(Guid id);
-    Task<Account?> FindAsync(string externalId);
-    Task AddAsync(Account account);
-    Task UpdateAsync(Account account);
-    Task UpdateAsync(IEnumerable<Account> accounts);
+    Task<TModel?> FindAsync(Guid id);
+    Task<TModel?> FindAsync(string externalId);
+    Task AddAsync(TModel account);
+    Task UpdateAsync(TModel account);
+    Task UpdateAsync(IEnumerable<TModel> accounts);
     Task<string> GetMaxNumberAsync(Guid? parentId);
-    Task<Account[]> GetAsync<TQuery>(TQuery query) where TQuery : IGetAccountsQuery;
-    Task<Account[]> GetAsync(IEnumerable<Guid> ids);
+    Task<TModel[]> GetAsync<TQuery>(TQuery query) where TQuery : IGetAccountsQuery;
+    Task<TModel[]> GetAsync(IEnumerable<Guid> ids);
     Task<bool> AnyAsync<TQuery>(TQuery query) where TQuery : IGetAccountsQuery;
     Task<int> SaveChangesAsync();
+}
+
+public interface IAccountRepository : IAccountRepository<Account>
+{
 }

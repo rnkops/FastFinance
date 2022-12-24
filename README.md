@@ -7,6 +7,16 @@ Double-entry accounting made easier.
 
 FastFinance is a .NET library for double-entry accounting. It is designed to be easy to use and to provide a simple API for common accounting tasks.
 
+## Warning ⚠️
+
+Version 2 is still in pre-release and is not yet ready for production use. It is recommended to use version 1 until version 2 is released.
+
+Version 2 is an overhaul of the library and contains breaking changes.
+
+Most notably, there are interfaces for `Account`, `Transaction`, `ChartOfAccounts` and `Journal` that can be used to implement custom logic and generic usage.
+
+`ChartOfAccount` was renamed to `ChartOfAccounts` to be consistent with the other interfaces.
+
 ## Installation
 
 In your terminal, run:
@@ -50,9 +60,9 @@ FastFinance is built around the following concepts:
 
 ## Documentation
 
-In the meantime, you can check out some [examples](/examples/)
-
 Coming soon.
+
+In the meantime, you can check out some [examples](/examples/)
 
 ## Contributing
 

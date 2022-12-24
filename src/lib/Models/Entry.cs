@@ -1,6 +1,6 @@
 namespace FastFinance.Models;
 
-public class Entry
+public class Entry : IEntry
 {
     public Guid Id { get; set; }
     public long Serial { get; set; }
@@ -11,10 +11,4 @@ public class Entry
     public decimal Amount { get; set; }
     public EntryType Type { get; set; }
     public string? Note { get; set; }
-}
-
-public enum EntryType
-{
-    Debit = -1,
-    Credit = 1
 }

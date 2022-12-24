@@ -2,7 +2,7 @@ using FastFinance.Models;
 
 namespace FastFinance.Dtos;
 
-public interface IGetTransactionsQuery<TTransaction> where TTransaction : Transaction
+public interface IGetTransactionsQuery<TTransaction> where TTransaction : ITransaction
 {
     public Guid[]? Ids { get; set; }
     public string[]? ExternalIds { get; set; }

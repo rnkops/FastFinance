@@ -21,7 +21,7 @@ public class TransactionController : ControllerBase
     {
         var transaction = request.GetTransaction();
         await _journal.AppendAsync(transaction);
-        _ = await _journal.SaveChangesAsync();
+        _ = await _journal.SaveChangesAsync<Transaction>();
         return Ok(transaction);
     }
 

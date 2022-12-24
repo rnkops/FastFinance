@@ -1,6 +1,6 @@
 namespace FastFinance.Models;
 
-public class Transaction
+public class Transaction : ITransaction
 {
     private readonly List<Entry> _entries = new();
     public Guid Id { get; set; }
@@ -28,6 +28,8 @@ public class Transaction
 
     public virtual bool IsValid()
     {
+        if (_entries.Count < 2)
+            return false;
         var diffByCurrency = new Dictionary<string, decimal>();
         foreach (var entry in _entries)
         {

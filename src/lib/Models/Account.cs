@@ -1,6 +1,6 @@
 namespace FastFinance.Models;
 
-public class Account
+public class Account : IAccount
 {
     public Guid Id { get; set; }
     public long Serial { get; set; }
@@ -34,7 +34,7 @@ public class Account
         }
     }
 
-    public virtual bool TryAppend(Entry entry)
+    public virtual bool TryAppend<TEntry>(TEntry entry) where TEntry : IEntry
     {
         if (entry.AccountId != Id)
             return false;

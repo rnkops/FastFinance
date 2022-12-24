@@ -5,7 +5,7 @@ using FastFinance.FastCrud.EFCore.Entities;
 
 namespace FastFinance.FastCrud.EFCore.Dtos;
 
-public class GetAccountsQuery : BaseGetQuery<Account, Guid>, IGetAccountsQuery
+public class GetAccountsQuery<TEntity> : BaseGetQuery<TEntity, Guid>, IGetAccountsQuery where TEntity : Account<TEntity>, new()
 {
     public Guid[]? Ids { get; set; }
     public string[]? ExternalIds { get; set; }
@@ -16,7 +16,7 @@ public class GetAccountsQuery : BaseGetQuery<Account, Guid>, IGetAccountsQuery
     public DateTimeOffset? CreatedAtGte { get; set; }
     public DateTimeOffset? CreatedAtLte { get; set; }
 
-    public override IQueryable<Account> GetFiltered(IQueryable<Account> queryable)
+    public override IQueryable<TEntity> GetFiltered(IQueryable<TEntity> queryable)
     {
         var trimmedQuery = Query?.Trim().ToLower();
         return queryable
@@ -27,4 +27,8 @@ public class GetAccountsQuery : BaseGetQuery<Account, Guid>, IGetAccountsQuery
             .ConditionalWhere(SerialGte.HasValue, x => x.Serial >= SerialGte)
             .ConditionalWhere(SerialLte.HasValue, x => x.Serial <= SerialLte);
     }
+}
+
+public class GetAccountsQuery : GetAccountsQuery<Account>, IGetAccountsQuery
+{
 }

@@ -3,7 +3,7 @@ using FastFinance.Models;
 
 namespace FastFinance.Repositories;
 
-public interface ITransactionRepository<TTransaction> where TTransaction : Transaction
+public interface ITransactionRepository<TTransaction> where TTransaction : ITransaction
 {
     Task<TTransaction?> FindAsync(Guid id);
     Task<TTransaction?> FindAsync(long serial);
