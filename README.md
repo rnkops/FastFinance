@@ -17,6 +17,8 @@ Most notably, there are interfaces for `Account`, `Transaction`, `ChartOfAccount
 
 `ChartOfAccount` was renamed to `ChartOfAccounts` to be consistent with the other interfaces.
 
+`Journal` is now an abstract class
+
 ## Installation
 
 In your terminal, run:

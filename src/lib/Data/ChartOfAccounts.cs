@@ -29,16 +29,13 @@ public class ChartOfAccounts : IChartOfAccounts
     {
         var accountRepository = _accountRepositoryFactory.Create<TAccount>();
         var number = request.Number ?? await accountRepository.GetMaxNumberAsync(request.ParentId);
-        var account = new TAccount
+        var account = request.GetAccount<TAccount>();
+        account.Id = request.Id ?? Guid.NewGuid();
+        account.Number = number;
+        if (account.CreatedAt == default || account.CreatedAt == DateTimeOffset.MinValue || account.CreatedAt == DateTimeOffset.MaxValue)
         {
-            Id = request.Id ?? Guid.NewGuid(),
-            Name = request.Name,
-            Number = number,
-            ExternalId = request.ExternalId,
-            ParentId = request.ParentId,
-            CreatedAt = DateTimeOffset.UtcNow,
-            Description = request.Description,
-        };
+            account.CreatedAt = DateTimeOffset.UtcNow;
+        }
         await accountRepository.AddAsync(account);
         return account;
     }
