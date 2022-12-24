@@ -2,7 +2,7 @@ using FastFinance.Models;
 
 namespace FastFinance.Dtos;
 
-public interface IAddAccountRequest
+public interface IAddAccountRequest<TAccount> where TAccount : IAccount, new()
 {
     public Guid? Id { get; set; }
     public Guid? ParentId { get; set; }
@@ -11,5 +11,5 @@ public interface IAddAccountRequest
     public string? ExternalId { get; set; }
     public string? Description { get; set; }
 
-    public TAccount GetAccount<TAccount>() where TAccount : IAccount, new();
+    public TAccount GetAccount();
 }

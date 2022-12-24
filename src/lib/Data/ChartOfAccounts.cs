@@ -25,11 +25,11 @@ public class ChartOfAccounts : IChartOfAccounts
         return accountRepository.FindAsync(externalId);
     }
 
-    public virtual async Task<TAccount> AddAsync<TAccount, TRequest>(TRequest request) where TRequest : class, IAddAccountRequest where TAccount : IAccount, new()
+    public virtual async Task<TAccount> AddAsync<TAccount, TRequest>(TRequest request) where TAccount : IAccount, new() where TRequest : class, IAddAccountRequest<TAccount>
     {
         var accountRepository = _accountRepositoryFactory.Create<TAccount>();
         var number = request.Number ?? await accountRepository.GetMaxNumberAsync(request.ParentId);
-        var account = request.GetAccount<TAccount>();
+        var account = request.GetAccount();
         account.Id = request.Id ?? Guid.NewGuid();
         account.Number = number;
         if (account.CreatedAt == default || account.CreatedAt == DateTimeOffset.MinValue || account.CreatedAt == DateTimeOffset.MaxValue)

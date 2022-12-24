@@ -8,7 +8,7 @@
 
     <PropertyGroup>
         <PackageId>FastFinance.FastCrud.EFCore</PackageId>
-        <Version>2.0.1-beta</Version>
+        <Version>2.0.2-beta</Version>
         <Authors>Muntadhar Haydar</Authors>
         <Company>RnkOps</Company>
         <PackageProjectUrl>https://github.com/rnkops/FastFinance</PackageProjectUrl>

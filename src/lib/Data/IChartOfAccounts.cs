@@ -7,7 +7,7 @@ public interface IChartOfAccounts
 {
     Task<TAccount> AddAsync<TAccount, TRequest>(TRequest request)
         where TAccount : IAccount, new()
-        where TRequest : class, IAddAccountRequest;
+        where TRequest : class, IAddAccountRequest<TAccount>;
     Task<TAccount?> FindAsync<TAccount>(Guid id) where TAccount : IAccount;
     Task<TAccount?> FindAsync<TAccount>(string externalId) where TAccount : IAccount;
     Task<TAccount[]> GetAsync<TAccount, TQuery>(TQuery query)
