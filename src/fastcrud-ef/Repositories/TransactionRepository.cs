@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FastFinance.FastCrud.EFCore.Repositories;
 
-public abstract class TransactionRepository<TTransaction, TEntity> : CRRepository<TEntity, Guid>, ITransactionRepository<TTransaction> where TTransaction : Transaction where TEntity : Entities.Transaction, IEntity<Guid>, IHasSerial, IHasCreatedAt
+public abstract class TransactionRepository<TTransaction, TEntity> : CRRepository<TEntity, Guid>, ITransactionRepository<TTransaction> where TTransaction : Transaction where TEntity : Entities.Transaction<TEntity>, IEntity<Guid>, IHasSerial, IHasCreatedAt
 {
     protected TransactionRepository(BaseDbContext context) : base(context)
     {

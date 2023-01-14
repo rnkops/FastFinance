@@ -6,7 +6,7 @@ using FastFinance.FastCrud.EFCore.Entities;
 
 namespace FastFinance.FastCrud.EFCore.Dtos;
 
-public abstract class BaseGetTransactionsQuery<TTransaction, TEntity> : BaseGetQuery<TEntity, Guid>, IGetTransactionsQuery<TTransaction> where TTransaction : Models.Transaction where TEntity : Transaction
+public abstract class BaseGetTransactionsQuery<TTransaction, TEntity> : BaseGetQuery<TEntity, Guid>, IGetTransactionsQuery<TTransaction> where TTransaction : Models.Transaction where TEntity : Transaction<TEntity>
 {
     public Guid[]? Ids { get; set; }
     public string[]? ExternalIds { get; set; }

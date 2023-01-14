@@ -8,9 +8,10 @@
 
     <PropertyGroup>
         <PackageId>FastFinance</PackageId>
-        <Version>2.0.2-beta</Version>
+        <Version>2.0.3-beta</Version>
         <Authors>Muntadhar Haydar</Authors>
         <Company>RnkOps</Company>
+        <Description>FastFinance is a simple double-entry accounting library for .NET 7.0</Description>
         <PackageProjectUrl>https://github.com/rnkops/FastFinance</PackageProjectUrl>
         <RepositoryUrl>https://github.com/rnkops/FastFinance</RepositoryUrl>
         <PackageTags>crud api</PackageTags>
