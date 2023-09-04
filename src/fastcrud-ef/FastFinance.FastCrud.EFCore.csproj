@@ -8,20 +8,20 @@
 
     <PropertyGroup>
         <PackageId>FastFinance.FastCrud.EFCore</PackageId>
-        <Version>2.0.3-beta</Version>
+        <Version>2.1.0-rc1</Version>
         <Authors>Muntadhar Haydar</Authors>
         <Company>RnkOps</Company>
         <Description>FastFinance.FastCurd.EFCore is an adapter for FastFinance to use FastCrud and EFCore</Description>
         <PackageProjectUrl>https://github.com/rnkops/FastFinance</PackageProjectUrl>
         <RepositoryUrl>https://github.com/rnkops/FastFinance</RepositoryUrl>
         <PackageTags>crud api</PackageTags>
-        <Copywrite>Copyright (c) 2022 rnkops</Copywrite>
+        <Copywrite>Copyright (c) 2023 rnkops</Copywrite>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FastCrud.Kernel" Version="1.0.1" />
-        <PackageReference Include="FastCrud.Persistence.EFCore" Version="1.0.1" />
+        <PackageReference Include="FastCrud.Kernel" Version="1.2.0-rc5" />
+        <PackageReference Include="FastCrud.Persistence.EFCore" Version="1.2.0-rc5" />
     </ItemGroup>
 
     <ItemGroup>

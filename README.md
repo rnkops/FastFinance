@@ -74,4 +74,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [MIT](LICENSE)
 
-Copyright (c) 2022 rnkops
+Copyright (c) 2023 rnkops

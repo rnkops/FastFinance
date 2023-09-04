@@ -5,11 +5,11 @@ namespace FastFinance.Repositories;
 
 public interface ITransactionRepository<TTransaction> where TTransaction : ITransaction
 {
-    Task<TTransaction?> FindAsync(Guid id);
-    Task<TTransaction?> FindAsync(long serial);
-    Task<TTransaction?> FindAsync(string externalId);
-    Task AddAsync(TTransaction transaction);
-    Task UpdateAsync(TTransaction transaction);
-    Task<TTransaction[]> GetAsync<TQuery>(TQuery query) where TQuery : IGetTransactionsQuery<TTransaction>;
-    Task<int> SaveChangesAsync();
+    Task<TTransaction?> FindAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<TTransaction?> FindAsync(long serial, CancellationToken cancellationToken = default);
+    Task<TTransaction?> FindAsync(string externalId, CancellationToken cancellationToken = default);
+    Task AddAsync(TTransaction transaction, CancellationToken cancellationToken = default);
+    Task UpdateAsync(TTransaction transaction, CancellationToken cancellationToken = default);
+    Task<TTransaction[]> GetAsync<TQuery>(TQuery query, CancellationToken cancellationToken = default) where TQuery : IGetTransactionsQuery<TTransaction>;
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
